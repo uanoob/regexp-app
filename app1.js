@@ -31,8 +31,25 @@ re = /Hel{2,}o/i; // Must occur least {m} amount of times
 // Parentheses - Grouping
 re = /^([0-9]x){3}$/;
 
+// Shorted Character Classes
+re = /\w/;  // Word character - alphanumeric or _
+re = /\w+/;  // + - one or more
+re = /\W/;  // Non-Word character
+re = /\d/;  // Match any digit
+re = /\d+/;  // Match any digit 0 or more times
+re = /\D/;  // Match any Non-digit
+re = /\s/;  // Match whitespace characters
+re = /\S/;  // Match non-whitespace characters
+re = /Hell\b/i; //Word boundary
+
+// Assertions
+re = /x(?=y)/;  // Match x only if followed by y
+re = /x(?!y)/;  // Match x only if NOT followed by y
+
+
+
 // String to match
-const str = '1x2x3x';
+const str = 'x';
 
 // Log results
 const result = re.exec(str);
